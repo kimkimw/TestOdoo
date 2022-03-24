@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_quan_ly_chuong_trinh_khuyen_mai,access_quan_ly_chuong_trinh_khuyen_mai,model_quan_ly_chuong_trinh_khuyen_mai,base.group_user,1,1,1,1
+access_res_partner,access_res_partner,model_res_partner,base.group_user,1,1,1,1
+access_loyalty_history,access_loyalty_history,model_loyalty_history,base.group_user,1,0,0,0
+access_partner_levels,access_partner_levels,model_partner_levels,base.group_user,1,1,1,1
+access_res_config_settings,access_res_config_settings,base.model_res_config_settings,base.group_user,1,1,1,1

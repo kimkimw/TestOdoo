@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="loyalty_history_tree_view" model="ir.ui.view">
+            <field name="name">loyalty_history.tree.view</field>
+            <field name="model">loyalty.history</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="partner_id" string="Partner"/>
+                    <field name="loyalty_point" string="Loyalty Point"/>
+                    <field name="money_spent" string="Money Spent"/>
+
+                    <field name="date_order" string="Date Order"/>
+                    <field name="name" string="Reference Number"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="action_loyalty_history" model="ir.actions.act_window">
+            <field name="name">Loyalty history</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loyalty.history</field>
+
+            <field name="view_mode">tree</field>
+
+        </record>
+
+
+
+    </data>
+</odoo>

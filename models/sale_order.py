@@ -4,7 +4,6 @@ from odoo import fields, models, api, _
 class SaleOrderInherit(models.Model):
     _inherit = 'sale.order'
 
-
     points_acumulated = fields.Float('Points acumulated')
     points_acumulating = fields.Float('Points acumulating')
     points_won = fields.Float('Points won')
@@ -24,25 +23,21 @@ class SaleOrderInherit(models.Model):
 
     @api.model
     def create(self, vals):
-
         result = super(SaleOrderInherit, self).create(vals)
         val = {
             'name': vals.get('name'),
             'partner_id': vals.get('partner_id'),
             'date_order': vals.get('date_order'),
             'loyalty_point': vals.get('loyalty_point')
-
         }
         print('ádasdasdsaddaasda')
         print(val)
         self.env['loyalty.history'].sudo().create(val)
-
         return result
 
     @api.onchange('order_line')
     def _onchange_points(self):
         for rec in self:
-
             print('-------------------------------', rec.tax_totals_json)
             rec.points_won = rec.amount_total + rec.points_acumulated
-            rec.points_acumulating = rec.amount_total * rec.percent /100
+            rec.points_acumulating = rec.amount_total * rec.percent / 100

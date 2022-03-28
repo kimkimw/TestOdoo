@@ -11,3 +11,5 @@ class LoyaltyHistory(models.Model):
     loyalty_point = fields.Float('Số điểm của tích lũy của khách hàng')
     date_order = fields.Datetime('Thời gian xác nhận đơn hàng')
     name = fields.Char('Mã đơn hàng')
+
+

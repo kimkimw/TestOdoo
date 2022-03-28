@@ -4,20 +4,19 @@ from odoo import fields, models, api, _
 class SaleOrderInherit(models.Model):
     _inherit = 'sale.order'
 
-    loyalty_name = fields.Many2one(comodel_name='quan.ly.chuong.trinh.khuyen.mai')
+
     points_acumulated = fields.Float('Points acumulated')
     points_acumulating = fields.Float('Points acumulating')
     points_won = fields.Float('Points won')
     points_used = fields.Float('Points used')
-    program = fields.Many2one('quan.ly.chuong.trinh.khuyen.mai')
-    percent = fields.Float(related='program.points')
+    percent = fields.Float(related='loyalty_name.points')
 
     def _default_loyalty_program(self):
         loyalty_id = int(self.env['ir.config_parameter'].sudo().get_param('loyalty_sale_id', False))
         loyalty = self.env['quan.ly.chuong.trinh.khuyen.mai'].browse(loyalty_id)
         return loyalty if loyalty_id and loyalty.exists() else None
 
-    loyalty_program_id = fields.Many2one(
+    loyalty_name = fields.Many2one(
         comodel_name='quan.ly.chuong.trinh.khuyen.mai',
         string='Chương trình khuyến mãi',
         default=_default_loyalty_program
@@ -43,7 +42,7 @@ class SaleOrderInherit(models.Model):
     @api.onchange('order_line')
     def _onchange_points(self):
         for rec in self:
-            rec.loyalty_name = rec.loyalty_name
+
             print('-------------------------------', rec.tax_totals_json)
             rec.points_won = rec.amount_total + rec.points_acumulated
             rec.points_acumulating = rec.amount_total * rec.percent /100

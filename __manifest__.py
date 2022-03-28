@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'product'],
+    'depends': ['base', 'product', 'sale'],
 
     # always loaded
     'data': [
@@ -30,6 +30,8 @@
         'views/loyalty_history.xml',
         'views/partner_levels.xml',
         'views/res_config_setting.xml',
+        'views/res_config_setting_sale.xml',
+        'views/sale_order_inherit.xml',
         'views/menu.xml'
     ],
     # only loaded in demonstration mode

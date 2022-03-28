@@ -9,9 +9,7 @@
             <field name="arch" type="xml">
                 <tree string="ModelTitle">
                     <field name="partner_id" string="Partner"/>
-                    <field name="loyalty_point" string="Loyalty Point"/>
-                    <field name="money_spent" string="Money Spent"/>
-
+                    <field name="loyalty_point" string="Loyalty Point" readonly="1"/>
                     <field name="date_order" string="Date Order"/>
                     <field name="name" string="Reference Number"/>
                 </tree>

@@ -6,3 +6,5 @@ from . import quan_ly_khach_hang
 from . import loyalty_history
 from . import partner_levels
 from . import res_config_setting
+from . import sale_order
+from . import res_config_setting_sale

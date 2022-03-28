@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_config_setting_sale_form_view" model="ir.ui.view">
+            <field name="name">res.config.setting.sale.form.view</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//div[@id='show_margins']" position="after">
+
+                    <div class="col-12 col-lg-6 o_setting_box"
+                            id="loyalty_for_sale_id2"
+                          >
+                            <div class="o_setting_left_pane">
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="loyalty_for_sale_id"/>
+                                <div class="text-muted">
+                                    Let your customers log in to see their documents
+                                </div>
+                                <div class="mt8">
+                                    <field name="loyalty_for_sale_id" class="o_light_label" />
+                                </div>
+                            </div>
+                        </div>
+
+                </xpath>
+
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

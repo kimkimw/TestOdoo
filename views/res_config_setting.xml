@@ -11,13 +11,12 @@
                 <xpath expr="//div[hasclass('settings')]" position="inside">
                     <div class="app_settings_block" data-string="loyalty" string="Loyalty" data-key="loyalty_program">
                         <h2>Loyalty</h2>
-
                         <div class="row mt16 o_settings_container" name="catalog_setting_container">
                             <div class="col-12 col-lg-6 o_setting_box" id="variant_options">
                                 <div class="o_setting_left_pane">
-                                    <label for="loyalty_email_notify" string="Email Notify"/>
-                                    <field name="loyalty_email_notify"/>
-
+                                    <group>
+                                        <field name="loyalty_email_notify"/>
+                                    </group>
                                 </div>
                             </div>
                         </div>

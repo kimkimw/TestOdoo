@@ -7,3 +7,4 @@ class QLKH(models.Model):
 
     loyalty_point = fields.Float('Số điểm của tích lũy của khách hàng')
     loyalty_level = fields.Many2one('partner.levels')
+

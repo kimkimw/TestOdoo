@@ -33,8 +33,13 @@ class SaleOrderInherit(models.Model):
         print('ádasdasdsaddaasda')
         print(val)
         self.env['loyalty.history'].sudo().create(val)
+        loyalty_points = self.env['res.partner'].browse(vals.get('partner_id')).write({
+            'loyalty_point': vals.get('points_acumulating')
+        })
         print(vals)
         return result
+
+
 
     @api.onchange('order_line')
     def _onchange_points(self):
@@ -42,3 +47,4 @@ class SaleOrderInherit(models.Model):
             print('-------------------------------', rec.tax_totals_json)
             rec.points_won = rec.amount_total * rec.percent / 100
             rec.points_acumulating = rec.amount_total * rec.percent / 100
+

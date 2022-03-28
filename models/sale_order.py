@@ -39,5 +39,5 @@ class SaleOrderInherit(models.Model):
     def _onchange_points(self):
         for rec in self:
             print('-------------------------------', rec.tax_totals_json)
-            rec.points_won = rec.amount_total * 0.1 + rec.points_acumulated
+            rec.points_won = rec.amount_total + rec.points_acumulated
             rec.points_acumulating = rec.amount_total * rec.percent / 100

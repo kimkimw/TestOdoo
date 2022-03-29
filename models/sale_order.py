@@ -33,9 +33,10 @@ class SaleOrderInherit(models.Model):
         print('ádasdasdsaddaasda')
         print(val)
         self.env['loyalty.history'].sudo().create(val)
-        loyalty_points = self.env['res.partner'].browse(vals.get('partner_id')).write({
+        write_loyalty_points = self.env['res.partner'].browse(vals.get('partner_id')).write({
             'loyalty_point': vals.get('points_acumulating')
         })
+
         print(vals)
         return result
 
